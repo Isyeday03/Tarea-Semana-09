@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de Datos - Infografía</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #667eea;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card.listas {
+            border-left-color: #4299e1;
+        }
+
+        .card.pilas {
+            border-left-color: #48bb78;
+        }
+
+        .card.colas {
+            border-left-color: #ed8936;
+        }
+
+        .card.hashset {
+            border-left-color: #9f7aea;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .listas .icon {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+        }
+
+        .pilas .icon {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .colas .icon {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+
+        .hashset .icon {
+            background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+        }
+
+        .card h2 {
+            color: #2d3748;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-content {
+            color: #718096;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .advantage {
+            background: #f0fff4;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #48bb78;
+        }
+
+        .disadvantage {
+            background: #fff5f5;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #fc8181;
+        }
+
+        .characteristic {
+            background: #ebf8ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #4299e1;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 25px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗂️ Estructuras de Datos</h1>
+            <p>Comparación de Características, Ventajas y Desventajas</p>
+        </div>
+
+        <div class="grid">
+            <!-- LISTAS -->
+            <div class="card listas">
+                <div class="card-header">
+                    <div class="icon">📋</div>
+                    <h2>Listas</h2>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">✨ Característica Principal</div>
+                    <div class="section-content characteristic">
+                        Colección ordenada de elementos que permite duplicados y acceso secuencial o aleatorio mediante índices.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✅ Ventaja</div>
+                    <div class="section-content advantage">
+                        Acceso rápido por índice (O(1)) y flexibilidad para insertar elementos en cualquier posición de la estructura.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❌ Desventaja</div>
+                    <div class="section-content disadvantage">
+                        La búsqueda de elementos puede ser lenta (O(n)) cuando no se conoce el índice exacto del elemento.
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILAS -->
+            <div class="card pilas">
+                <div class="card-header">
+                    <div class="icon">📚</div>
+                    <h2>Pilas (Stack)</h2>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">✨ Característica Principal</div>
+                    <div class="section-content characteristic">
+                        Estructura LIFO (Last In, First Out): el último elemento agregado es el primero en salir.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✅ Ventaja</div>
+                    <div class="section-content advantage">
+                        Operaciones push y pop muy eficientes (O(1)), ideal para deshacer/rehacer acciones y evaluación de expresiones.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❌ Desventaja</div>
+                    <div class="section-content disadvantage">
+                        Acceso limitado: solo se puede acceder al elemento superior, no hay acceso aleatorio a elementos intermedios.
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLAS -->
+            <div class="card colas">
+                <div class="card-header">
+                    <div class="icon">🎫</div>
+                    <h2>Colas (Queue)</h2>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">✨ Característica Principal</div>
+                    <div class="section-content characteristic">
+                        Estructura FIFO (First In, First Out): el primer elemento agregado es el primero en salir.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✅ Ventaja</div>
+                    <div class="section-content advantage">
+                        Perfecta para manejar tareas en orden de llegada, como colas de impresión o sistemas de atención al cliente.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❌ Desventaja</div>
+                    <div class="section-content disadvantage">
+                        No permite acceso directo a elementos intermedios, solo se puede acceder al frente y al final de la cola.
+                    </div>
+                </div>
+            </div>
+
+            <!-- HASHSET -->
+            <div class="card hashset">
+                <div class="card-header">
+                    <div class="icon">🔑</div>
+                    <h2>HashSet</h2>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">✨ Característica Principal</div>
+                    <div class="section-content characteristic">
+                        Colección que no permite elementos duplicados y no garantiza orden específico, basada en tablas hash.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✅ Ventaja</div>
+                    <div class="section-content advantage">
+                        Búsqueda, inserción y eliminación extremadamente rápidas (O(1) promedio), ideal para validar unicidad.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❌ Desventaja</div>
+                    <div class="section-content disadvantage">
+                        No mantiene el orden de inserción y consume más memoria debido a la estructura interna de hash.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 <strong>Tip:</strong> La elección de la estructura de datos adecuada depende de las operaciones que necesites realizar con mayor frecuencia.</p>
+        </div>
+    </div>
+</body>
+</html>
